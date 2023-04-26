@@ -1,0 +1,93 @@
+$breakpoints: (
+  // sm: 576px,
+  // md: 768px,
+  lg: 992px,
+  // xl: 1200px,
+);
+
+@mixin respond-to($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+.headerDropdownMenu {
+  position: relative;
+  padding: 0 10px;
+  z-index: 3;
+
+  @include respond-to(lg) {
+    display: none;
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &-text {
+      line-height: 60px;
+      color: #000;
+    }
+
+    &-icon {
+      padding: 5px;
+      width: 30px;
+      height: 30px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    padding: 10px 0;
+    left: 0;
+    top: 100%;
+    width: 200px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: -10px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 10px 10px 10px;
+      border-color: transparent transparent #fff transparent;
+    }
+
+    li {
+      padding: 0 20px;
+      line-height: 40px;
+      color: #000;
+      cursor: pointer;
+      transition: 0.2s;
+      border-bottom: 1px dashed #ccc;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background: #f2f2f2;
+      }
+    }
+  }
+}

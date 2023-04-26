@@ -20,189 +20,58 @@ $breakpoints: (
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  z-index: 3;
 
   &__container {
     display: flex;
     align-items: center;
     gap: 10px;
 
-    .header__logo {
-      width: 100px;
-      height: 32px;
+    // .header__nav {
+    //   display: flex;
+    //   align-items: center;
 
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
+    //   .header__icon {
+    //     padding: 5px;
+    //     width: 30px;
+    //     height: 30px;
+    //     cursor: pointer;
+    //     display: none;
 
-    .header__dropdown {
-      position: relative;
-      padding: 0 10px;
+    //     @include respond-to(lg) {
+    //       display: block;
+    //     }
 
-      @include respond-to(lg){
-        display: none;
-      }
+    //     svg {
+    //       width: 100%;
+    //       height: 100%;
+    //     }
+    //   }
 
-      &-selected {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
+    //   .header__menu {
+    //     display: flex;
+    //     list-style: none;
 
-        &-text {
-          line-height: 60px;
-          color: #000;
-        }
+    //     @include respond-to(lg) {
+    //       display: none;
+    //     }
 
-        &-icon {
-          padding: 5px;
-          width: 30px;
-          height: 30px;
+    //     &-item {
+    //       padding: 0 10px;
+    //       line-height: 60px;
+    //       color: #000;
+    //       white-space: nowrap;
+    //       cursor: pointer;
 
-          svg {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-
-      &-menu {
-        position: absolute;
-        padding: 10px 0;
-        left: 0;
-        top: 100%;
-        width: 200px;
-        background: #fff;
-        border-radius: 4px;
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-        list-style: none;
-        opacity: 0;
-        pointer-events: none;
-        transition: 0.2s;
-
-        &.active {
-          opacity: 1;
-          pointer-events: auto;
-        }
-
-        &::before {
-          position: absolute;
-          content: "";
-          top: -10px;
-          left: 20px;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 0 10px 10px 10px;
-          border-color: transparent transparent #fff transparent;
-        }
-
-        li {
-          padding: 0 20px;
-          line-height: 40px;
-          color: #000;
-          cursor: pointer;
-          transition: 0.2s;
-          border-bottom: 1px dashed #ccc;
-
-          &:last-child {
-            border-bottom: none;
-          }
-
-          &:hover {
-            background: #f2f2f2;
-          }
-        }
-      }
-    }
-
-    .header__form {
-      display: flex;
-      gap: 5px;
-
-      .header__search {
-        width: 200px;
-        height: 30px;
-
-        @include respond-to(lg) {
-          display: none;
-        }
-
-        input {
-          padding: 0 10px;
-          width: 100%;
-          height: 100%;
-          border: none;
-          background: transparent;
-          border: 1px solid #000;
-          border-radius: 4px;
-          outline: none;
-          color: #000;
-        }
-      }
-
-      .header__search-button {
-        padding: 5px;
-        width: 30px;
-        height: 30px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-
-        svg {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-
-    .header__nav {
-      display: flex;
-      align-items: center;
-
-      .header__icon {
-        padding: 5px;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        display: none;
-
-        @include respond-to(lg) {
-          display: block;
-        }
-
-        svg {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-      .header__menu {
-        display: flex;
-        list-style: none;
-
-        @include respond-to(lg) {
-          display: none;
-        }
-
-        &-item {
-          padding: 0 10px;
-          line-height: 60px;
-          color: #000;
-          white-space: nowrap;
-          cursor: pointer;
-
-          .header__login-button {
-            padding: 10px 20px;
-            background: #1b66b2;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-          }
-        }
-      }
-    }
+    //       .header__login-button {
+    //         padding: 10px 20px;
+    //         background: #1b66b2;
+    //         border: none;
+    //         border-radius: 4px;
+    //         cursor: pointer;
+    //       }
+    //     }
+    //   }
+    // }
   }
 }

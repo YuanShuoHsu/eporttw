@@ -1,0 +1,49 @@
+$breakpoints: (
+  lg: 992px,
+);
+
+@mixin respond-to($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+.headerSearchForm {
+  display: flex;
+  gap: 5px;
+
+  .headerSearchForm__search {
+    width: 200px;
+    height: 30px;
+
+    @include respond-to(lg) {
+      display: none;
+    }
+
+    input {
+      padding: 0 10px;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      border: 1px solid #000;
+      border-radius: 4px;
+      outline: none;
+      color: #000;
+    }
+  }
+
+  .headerSearchForm__search-button {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
