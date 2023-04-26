@@ -14,20 +14,20 @@ export default function HeaderNav() {
       </div>
       <ul className={styles.headerNav__menu}>
         <li className={styles["headerNav__menu-item"]}>
-          <Link href="/about">興趣測驗</Link>
+          <Link href="/test">興趣測驗</Link>
         </li>
         <li className={styles["headerNav__menu-item"]}>
-          <Link href="/services">學習情報</Link>
+          <Link href="https://blog.eporttw.com/">學習情報</Link>
         </li>
         <li className={styles["headerNav__menu-item"]}>
-          <Link href="/products">上架活動</Link>
-        </li>
-        <li className={styles["headerNav__menu-item"]}>
-          <Link href="/contact">
-            <button className={styles["headerNav__login-button"]}>登入</button>
-          </Link>
+          <Link href="/login">上架活動</Link>
         </li>
       </ul>
+      <Link href="/login">
+        <div className={styles.headerNav__login}>
+          <button className={styles["headerNav__login-button"]}>登入</button>
+        </div>
+      </Link>
     </nav>
   );
 }

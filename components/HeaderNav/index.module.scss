@@ -12,7 +12,7 @@ $breakpoints: (
   display: flex;
   align-items: center;
 
-  .headerNav__icon {
+  &__icon {
     padding: 5px;
     width: 30px;
     height: 30px;
@@ -29,7 +29,7 @@ $breakpoints: (
     }
   }
 
-  .headerNav__menu {
+  &__menu {
     display: flex;
     list-style: none;
 
@@ -43,14 +43,26 @@ $breakpoints: (
       color: #000;
       white-space: nowrap;
       cursor: pointer;
+    }
+  }
 
-      .headerNav__login-button {
-        padding: 10px 20px;
-        background: #1b66b2;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
+  &__login {
+    padding: 0 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include respond-to(lg) {
+      display: none;
+    }
+
+    &-button {
+      padding: 10px 20px;
+      background: #1b66b2;
+      border: none;
+      border-radius: 4px;
+      pointer-events: none;
     }
   }
 }
