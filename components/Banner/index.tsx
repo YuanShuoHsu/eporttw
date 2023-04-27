@@ -18,11 +18,11 @@ import Image4 from "../../images/學習歷程.jpg";
 import Image5 from "../../images/探索與思維.jpg";
 
 const slides = [
-  { id: 1, src: Image1, alt: "Image 1" },
-  { id: 2, src: Image2, alt: "Image 2" },
-  { id: 3, src: Image3, alt: "Image 3" },
-  { id: 4, src: Image4, alt: "Image 1" },
-  { id: 5, src: Image5, alt: "Image 2" },
+  { id: 1, src: Image1, alt: "兔You" },
+  { id: 2, src: Image2, alt: "校園種子培訓" },
+  { id: 3, src: Image3, alt: "面試決勝局" },
+  { id: 4, src: Image4, alt: "學習歷程" },
+  { id: 5, src: Image5, alt: "探索與思維" },
 ];
 
 export default function Banner() {

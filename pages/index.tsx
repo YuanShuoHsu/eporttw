@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
-import styles from "@/styles/Home.module.css";
+import VerticalCard from "@/components/VerticalCard";
+import styles from "@/styles/Home.module.scss";
 
 export default function Home() {
   return (
@@ -15,6 +16,12 @@ export default function Home() {
       <main className={styles.home}>
         <Header />
         <Banner />
+        <div className={styles.home__container}>
+          <VerticalCard />
+          <VerticalCard />
+          <VerticalCard />
+          <VerticalCard />
+        </div>
       </main>
     </>
   );
