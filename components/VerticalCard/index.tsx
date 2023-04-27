@@ -4,9 +4,13 @@ import Image from "next/image";
 
 import image from "../../images/兔You.jpg";
 
-export default function VerticalCard() {
+interface VerticalCardProps {
+  lastCard?: string;
+}
+
+export default function VerticalCard({ lastCard }: VerticalCardProps) {
   return (
-    <div className={styles.verticalCard}>
+    <div className={`${styles.verticalCard} ${lastCard}`}>
       <div className={styles.verticalCard__header}>
         <div className={styles.verticalCard__headerImage}>
           <Image src={image} alt="測試" />
@@ -28,7 +32,9 @@ export default function VerticalCard() {
               <path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
             </svg>
           </div>
-          <span className={styles.verticalCard__mainText}>2023-04-28（三）</span>
+          <span className={styles.verticalCard__mainText}>
+            2023-04-28（三）
+          </span>
         </div>
         <div className={styles.verticalCard__mainInfo}>
           <div className={styles.verticalCard__mainIcon}>
@@ -49,7 +55,9 @@ export default function VerticalCard() {
       </div>
       <hr />
       <div className={styles.verticalCard__footer}>
-        <p className={styles.verticalCard__footerHashTag}>#面試技巧 #面試技巧 #面試技巧 #面試技巧 #面試技巧 #面試技巧</p>
+        <p className={styles.verticalCard__footerHashTag}>
+          #面試技巧 #面試技巧 #面試技巧 #面試技巧 #面試技巧 #面試技巧
+        </p>
       </div>
     </div>
   );

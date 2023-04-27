@@ -2,7 +2,6 @@ $breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  // xl: 1200px,
 );
 
 @mixin respond-to($breakpoint) {
@@ -45,6 +44,16 @@ $breakpoints: (
 
     @include respond-to(sm) {
       grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .eventContainer__lastCard {
+      @include respond-to(lg) {
+        display: none;
+      }
+
+      @include respond-to(md) {
+        display: block;
+      }
     }
   }
 

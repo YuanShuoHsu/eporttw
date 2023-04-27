@@ -24,7 +24,7 @@ export default function EventContainer({
         <VerticalCard />
         <VerticalCard />
         <VerticalCard />
-        <VerticalCard />
+        <VerticalCard lastCard={styles.eventContainer__lastCard}/>
       </div>
       {link && (
         <div className={styles.eventContainer__link}>
