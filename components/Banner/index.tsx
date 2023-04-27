@@ -8,7 +8,14 @@ import "swiper/scss/free-mode";
 
 import styles from "./index.module.scss";
 
-import { Navigation, Pagination, FreeMode,Autoplay } from "swiper";
+import {
+  Navigation,
+  Pagination,
+  FreeMode,
+  Keyboard,
+  Mousewheel,
+  Autoplay,
+} from "swiper";
 
 import Image from "next/image";
 import Image1 from "../../images/兔You.jpg";
@@ -38,15 +45,25 @@ export default function Banner() {
           sticky: true,
         }}
         loop={true}
+        keyboard={{
+          enabled: true,
+        }}
         mousewheel={true}
         speed={500}
         autoplay={{
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
           waitForTransition: false,
         }}
         autoHeight={true}
-        modules={[Navigation, Pagination, FreeMode,Autoplay]}
+        modules={[
+          Navigation,
+          Pagination,
+          FreeMode,
+          Keyboard,
+          Mousewheel,
+          Autoplay,
+        ]}
         className={styles.banner}
       >
         {slides.map((item) => (
