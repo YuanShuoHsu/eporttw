@@ -21,9 +21,22 @@
     }
   }
 
-  :global(.swiper-button-prev),
+  :global(.swiper-button-prev) {
+    left: 20px;
+
+    &::after {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
   :global(.swiper-button-next) {
-    color: rgba(255, 255, 255, 0.5);
+    right: 20px;
+
+    &::after {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.5);
+    }
   }
 
   :global(.swiper-pagination) {
