@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
-import VerticalCard from "@/components/VerticalCard";
+import EventContainer from "@/components/EventContainer";
+
 import styles from "@/styles/Home.module.scss";
 
 export default function Home() {
@@ -16,12 +17,23 @@ export default function Home() {
       <main className={styles.home}>
         <Header />
         <Banner />
-        <div className={styles.home__container}>
-          <VerticalCard />
-          <VerticalCard />
-          <VerticalCard />
-          <VerticalCard />
-        </div>
+
+        <EventContainer title="熱門推薦" />
+        <EventContainer
+          title="營隊專區"
+          link={"/event/camp"}
+          linkText="更多營隊"
+        />
+        <EventContainer
+          title="免費專區"
+          link={"/event/free"}
+          linkText="更多活動"
+        />
+        <EventContainer
+          title="精選活動"
+          link={"/event/featured"}
+          linkText="更多活動"
+        />
       </main>
     </>
   );
