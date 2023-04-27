@@ -1,33 +1,59 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/scss";
+import "swiper/scss/navigation";
+import "swiper/scss/pagination";
+import "swiper/scss/free-mode";
 
 import styles from "./index.module.scss";
 
-// import required modules
-import { Navigation } from "swiper";
+import { Navigation, Pagination, FreeMode,Autoplay } from "swiper";
+
+import Image from "next/image";
+import Image1 from "../../images/兔You.jpg";
+import Image2 from "../../images/校園種子培訓.jpg";
+import Image3 from "../../images/面試決勝局.jpg";
+import Image4 from "../../images/學習歷程.jpg";
+import Image5 from "../../images/探索與思維.jpg";
+
+const slides = [
+  { id: 1, src: Image1, alt: "Image 1" },
+  { id: 2, src: Image2, alt: "Image 2" },
+  { id: 3, src: Image3, alt: "Image 3" },
+  { id: 4, src: Image4, alt: "Image 1" },
+  { id: 5, src: Image5, alt: "Image 2" },
+];
 
 export default function Banner() {
   return (
     <>
       <Swiper
         navigation={true}
-        modules={[Navigation]}
+        pagination={{
+          clickable: true,
+        }}
+        freeMode={{
+          enabled: true,
+          sticky: true,
+        }}
+        loop={true}
+        mousewheel={true}
+        speed={500}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+          waitForTransition: false,
+        }}
+        autoHeight={true}
+        modules={[Navigation, Pagination, FreeMode,Autoplay]}
         className={styles.banner}
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {slides.map((item) => (
+          <SwiperSlide key={item.id}>
+            <Image src={item.src} alt={item.alt} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
