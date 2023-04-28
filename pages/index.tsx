@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import Head from "next/head";
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
@@ -7,6 +9,21 @@ import Footer from "@/components/Footer";
 import styles from "@/styles/Home.module.scss";
 
 export default function Home() {
+
+  useEffect(() => {
+    function handleScroll() {
+      const y = window.scrollY;
+      console.log(`y轴滚动距离: ${y}px`);
+    }
+
+    console.log("window")
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Head>
