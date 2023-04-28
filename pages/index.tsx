@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
 import EventContainer from "@/components/EventContainer";
+import Footer from "@/components/Footer";
 
 import styles from "@/styles/Home.module.scss";
 
@@ -34,6 +35,7 @@ export default function Home() {
           link={"/event/featured"}
           linkText="更多活動"
         />
+        <Footer />
       </main>
     </>
   );

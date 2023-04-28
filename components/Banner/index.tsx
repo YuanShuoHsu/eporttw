@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/scss";
@@ -25,11 +26,31 @@ import Image4 from "../../images/學習歷程.jpg";
 import Image5 from "../../images/探索與思維.jpg";
 
 const slides = [
-  { id: 1, src: Image1, alt: "兔You" },
-  { id: 2, src: Image2, alt: "校園種子培訓" },
-  { id: 3, src: Image3, alt: "面試決勝局" },
-  { id: 4, src: Image4, alt: "學習歷程" },
-  { id: 5, src: Image5, alt: "探索與思維" },
+  {
+    id: 1,
+    link: "https://special-rabbit.eporttw.com/",
+    src: Image1,
+    alt: "兔You",
+  },
+  { id: 2, link: "/event/school_luckerapp", src: Image2, alt: "校園種子培訓" },
+  {
+    id: 3,
+    link: "/event/interview_tips?utm_source=home-star&utm_medium=recommend&utm_campaign=1a9092d419e5453f90419bef56c8af4f",
+    src: Image3,
+    alt: "面試決勝局",
+  },
+  {
+    id: 4,
+    link: "/event/f087611134044ee0866944f9f2df6a26?utm_source=organization&utm_medium=info&utm_campaign=f087611134044ee0866944f9f2df6a26",
+    src: Image4,
+    alt: "學習歷程",
+  },
+  {
+    id: 5,
+    link: "/event/09288f927abe4208834223b9731eb68c?utm_source=organization&utm_medium=info&utm_campaign=09288f927abe4208834223b9731eb68c",
+    src: Image5,
+    alt: "探索與思維",
+  },
 ];
 
 export default function Banner() {
@@ -68,7 +89,9 @@ export default function Banner() {
       >
         {slides.map((item) => (
           <SwiperSlide key={item.id}>
-            <Image src={item.src} alt={item.alt} />
+            <Link href={item.link}>
+              <Image src={item.src} alt={item.alt} />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
